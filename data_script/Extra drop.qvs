@@ -1,0 +1,33 @@
+// Create a list of all table names in the data model
+NoConcatenate
+TableList:
+LOAD
+  TableName
+AUTOGENERATE(0);
+
+
+
+// Add table names to the TableList
+FOR i = 0 TO NoOfTables() - 1
+  LET vTableName = TableName($(i));
+  IF '$(vTableName)' <> 'ReloadList' THEN
+    Concatenate(TableList)
+    LOAD
+      '$(vTableName)' AS TableName
+    AUTOGENERATE(1);
+  ENDIF
+NEXT i;
+
+if NoOfRows('TableList') then
+
+  // Drop all tables except 'reloadlist'
+  FOR i = 0 TO NoOfRows('TableList') - 1
+    LET vTableToDrop = Peek('TableName', $(i), 'TableList');
+    DROP TABLE [$(vTableToDrop)];
+  NEXT i;
+
+  // Drop the helper table
+  DROP TABLE TableList;
+
+	
+end if;
