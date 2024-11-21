@@ -1,0 +1,79 @@
+IF $(vRunFullExtract) = 1 THEN
+  // Full extract
+  Trace 'Running Full extract';
+  FOR Each a in FieldValueList('Years')
+      call ExtractFinancial($(a));
+  next a;
+
+ELSE
+  // Not Full extract
+  Trace 'Running partial extract $(vYear)';
+  // If the month is jan, it also extracts the previous year
+  IF Month(Today()-1) = 1 THEN
+      Trace 'Running previous extract $(vPreviousYear)';
+      call ExtractFinancial($(vPreviousYear));
+  ENDIF
+
+  call ExtractFinancial($(vYear));
+
+END IF;
+
+Trace 'Finished Extract fact_financial_transactions';
+
+// Compare
+Table1:
+NoConcatenate First 1 load
+*
+  FROM 'lib://Finance_QVD/Extract/fact_financial_transactions_$(vYear).qvd' (qvd)
+;
+LET vTable1=NoOfFields('Table1');
+
+Table2:
+NoConcatenate First 1 load
+*
+  FROM 'lib://Finance_QVD/Extract/fact_financial_transactions_$(vPreviousYear).qvd' (qvd)
+;
+LET vTable2=NoOfFields('Table2');
+
+drop tables Table1, Table2;
+
+ 
+if vTable1 <> vTable2 then
+  trace 'Full extract due to vTable1 has $(vTable1) fields while vTable2 has $(vTable1)';
+  FOR Each a in FieldValueList('Years')
+      call ExtractFinancial($(a));
+  next a;
+end if;
+
+Trace 'Finished Extract fact_financial_transactions';
+
+// Concat
+fact_financial_transactions:
+Load 
+	*
+FROM 'lib://Finance_QVD/Extract/fact_financial_transactions_$(vStartYear).qvd' (qvd);
+
+FOR Each a in FieldValueList('Years')
+  
+  IF $(a) = $(vStartYear) THEN
+	// Do nothing, 2020 already loaded
+  ELSE
+  
+   	Trace 'Concatenating fact_financial_transactions_$(a)';
+        
+  	Concatenate(fact_financial_transactions)
+    Load 
+	*
+  	FROM 'lib://Finance_QVD/Extract/fact_financial_transactions_$(a).qvd' (qvd);
+  
+  ENDIF;
+  
+next a;
+
+
+if NoOfRows('fact_financial_transactions') then
+	store fact_financial_transactions into '"lib://Finance_QVD/Extract/fact_financial_transactions.qvd' (qvd);
+    drop table fact_financial_transactions;
+end if;
+
+Trace 'Finished Concat aaro_oper_data';
