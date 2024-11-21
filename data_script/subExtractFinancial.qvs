@@ -1,0 +1,40 @@
+sub ExtractFinancial ( vYear )
+///Change to switch environment from Test to Prod
+LIB CONNECT TO 'PS Finance SQL PROD PROD';
+
+///Start time for ReloadList
+let vStart = now();
+///DW server & DB
+Set vTable = "db-prod-we-finance".dbo.fact_financial_transactions;
+///SQL where
+Set vWhere = 'where Year(Transaction_date_created) = $(vYear)';
+///Path to store qvd
+Set vPath = "lib://Finance_QVD/Extract/fact_financial_transactions_$(vYear).qvd";
+///SQL query
+set vQuery = SELECT * FROM $(vTable) $(vWhere);
+
+
+Trace 'Running $(vQuery)';
+Trace 'Will save as $(vPath)';
+
+Tmp:
+  LOAD 
+*
+      ;
+  SQL $(vQuery);
+  ;
+  
+Let vRows = 0;
+Let vRows = NoOfRows('Tmp');
+
+
+if NoOfRows('Tmp') then
+	store Tmp into '$(vPath)' (qvd);
+    drop table Tmp;
+end if;
+
+
+Call ReloadList ('$(vTable)','$(vStart)','$(vPath)', '$(vRows)');
+ 
+
+end sub
