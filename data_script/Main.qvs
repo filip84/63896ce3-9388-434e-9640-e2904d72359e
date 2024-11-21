@@ -1,0 +1,42 @@
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='YYYY-MM-DD'; //M/D/YYYY';
+SET TimestampFormat= 'YYYY-MM-DD hh:mm:ss[.fff] TT';//'M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+//SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+let vStartYear = 2020;
+
+
+///Table to keep track on extraction details.
+ReloadList:
+Load * inline [
+Table, Start, End, Rows, Size, Path, Type
+];
+
+///Table to keep track of possible years
+YearList:
+LOAD
+    Year(AddYears(Today(), -IterNo() + 1)) AS Years
+AUTOGENERATE (1)
+WHILE Year(AddYears(Today(), -IterNo() + 1)) >= $(vStartYear);
+
+///Control
+//let vRunFullExtract = 0;
+// Set vRunFullExtract to 1 if it's Sunday, otherwise set it to 0
+LET vRunFullExtract = if(WeekDay(Today()) = 'Sun', 1, 0);
+let vYear = Year(Today()-1);
+let vPreviousYear = Year(Today()-2);
