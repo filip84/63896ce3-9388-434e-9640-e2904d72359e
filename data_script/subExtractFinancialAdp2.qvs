@@ -1,0 +1,156 @@
+sub ExtractFinancialAdp2
+///Change to switch environment from Test to Prod
+LIB CONNECT TO 'Databricks_s_Johannes';
+
+///Start time for ReloadList
+let vStart = now();
+///DW server & DB
+Set vTable = adp_gold_s_dev.finance_accounting.fact_financial_transactions;
+///SQL where
+Set vWhere = '';
+///Path to store qvd
+Set vPath = "lib://Finance_QVD/Extract/fact_financial_transactions_gold_s_dev.qvd";
+///SQL query
+set vQuery = SELECT * FROM $(vTable) $(vWhere);
+
+
+Trace 'Running $(vQuery)';
+Trace 'Will save as $(vPath)';
+
+Tmp:
+  LOAD 
+*
+      ;
+  SQL $(vQuery);
+  ;
+  
+Let vRows = 0;
+Let vRows = NoOfRows('Tmp');
+
+
+if NoOfRows('Tmp') then
+	store Tmp into '$(vPath)' (qvd);
+    drop table Tmp;
+end if;
+
+
+Call ReloadList ('$(vTable)','$(vStart)','$(vPath)', '$(vRows)');
+ 
+
+end sub
+
+
+
+/*
+
+LOAD ID, 
+	Group_Account_Id, 
+	Account_ERP, 
+	Account_Source_System, 
+	GL_Account_Id, 
+	GL_Account_Name, 
+	Cost_Type, 
+	Year_month, 
+	Document_Date, 
+	Entity_Id, 
+	Group_Entity_Id, 
+	Country_Id, 
+	AmountInCompanyCodeCurrency, 
+	Amount, 
+	Document_Type, 
+	Revenue_Category_Id, 
+	Revenue_Category_Name, 
+	Cost_Center_Id, 
+	Cost_Center_Text, 
+	IO_Number, 
+	Purchase_Order_Number, 
+	Currency_Id, 
+	Transaction_Text, 
+	Car_id, 
+	Transaction_Partner, 
+	Source_System_Id, 
+	Source_Id, 
+	Transaction_Product_Reference, 
+	Product, 
+	Sequence, 
+	Transaction_date_last_update, 
+	Transaction_date_created, 
+	Spend_Category_Id, 
+	Spend_Category_Name, 
+	Transaction_Accounting_Date, 
+	Journal_Source, 
+	Assignment, 
+	Vendor, 
+	Line_Item, 
+	Document_Header_Text, 
+	IOName, 
+	Entry_Date, 
+	Group_Account_Number, 
+	Functional_Area, 
+	ASP_Category, 
+	Quantity, 
+	WBS_Element, 
+	WBS_Element_Text, 
+	Transaction_Amount_USD, 
+	Transaction_Amount_SEK, 
+	Transaction_Amount_EUR, 
+	Transaction_Amount_CNY, 
+	Transaction_Amount_Local_Currency;
+
+[fact_financial_transactions]:
+SELECT ID,
+	`Group_Account_Id`,
+	`Account_ERP`,
+	`Account_Source_System`,
+	`GL_Account_Id`,
+	`GL_Account_Name`,
+	`Cost_Type`,
+	`Year_month`,
+	`Document_Date`,
+	`Entity_Id`,
+	`Group_Entity_Id`,
+	`Country_Id`,
+	AmountInCompanyCodeCurrency,
+	Amount,
+	`Document_Type`,
+	`Revenue_Category_Id`,
+	`Revenue_Category_Name`,
+	`Cost_Center_Id`,
+	`Cost_Center_Text`,
+	`IO_Number`,
+	`Purchase_Order_Number`,
+	`Currency_Id`,
+	`Transaction_Text`,
+	`Car_id`,
+	`Transaction_Partner`,
+	`Source_System_Id`,
+	`Source_Id`,
+	`Transaction_Product_Reference`,
+	Product,
+	Sequence,
+	`Transaction_date_last_update`,
+	`Transaction_date_created`,
+	`Spend_Category_Id`,
+	`Spend_Category_Name`,
+	`Transaction_Accounting_Date`,
+	`Journal_Source`,
+	Assignment,
+	Vendor,
+	`Line_Item`,
+	`Document_Header_Text`,
+	IOName,
+	`Entry_Date`,
+	`Group_Account_Number`,
+	`Functional_Area`,
+	`ASP_Category`,
+	Quantity,
+	`WBS_Element`,
+	`WBS_Element_Text`,
+	`Transaction_Amount_USD`,
+	`Transaction_Amount_SEK`,
+	`Transaction_Amount_EUR`,
+	`Transaction_Amount_CNY`,
+	`Transaction_Amount_Local_Currency`
+FROM `adp_gold_s_dev`.`finance_accounting`.`fact_financial_transactions`;
+
+*/
