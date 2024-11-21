@@ -1,0 +1,36 @@
+sub Extract (vTableName, vWhere)
+///Change to switch environment from Test to Prod
+LIB CONNECT TO 'PS Finance SQL PROD PROD';
+
+Trace 'Extracting $(vTableName)';
+///Start time for ReloadList
+let vStart = now();
+///DW server & DB
+Set vTable = "db-prod-we-finance".dbo.$(vTableName);
+///Path to store qvd
+Set vPath = "lib://Finance_QVD/Extract/$(vTableName).qvd";
+///SQL query
+set vQuery = SELECT * FROM $(vTable) $(vWhere);
+
+
+Trace 'Running $(vQuery)';
+Trace 'Will save as $(vPath)';
+
+Tmp:
+  LOAD 
+*
+      ;
+  SQL $(vQuery);
+  ;
+  
+Let vRows = 0;
+Let vRows = NoOfRows('Tmp');
+
+if NoOfRows('Tmp') then
+	store Tmp into '$(vPath)' (qvd);
+    drop table Tmp;
+end if;
+
+Call ReloadList ('$(vTable)','$(vStart)','$(vPath)', '$(vRows)');
+
+end sub
