@@ -1,0 +1,21 @@
+sub ReloadList ( vTable, vStart, vPath, vRows )
+
+///Variables for ReloadList
+let vEnd = now();
+let vSize = FileSize( '$(vPath)' );
+let vType = 'Full';
+
+
+IF $(vRunFullExtract) = 0 and '$(vTable)' = '"db-prod-we-finance".dbo.fact_financial_transactions' THEN
+let vType = 'Incr';
+ENDIF;
+
+///Store extraction details before drop and next
+Concatenate (ReloadList) load * inline [
+Table, Start, End, Rows, Size, Path, Type
+$(vTable),$(vStart),$(vEnd),$(vRows),$(vSize),$(vPath),$(vType)
+]
+;
+
+
+end sub
