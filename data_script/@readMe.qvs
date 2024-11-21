@@ -1,0 +1,5 @@
+/*
+This app extracts ERP & mapping data from one database, db-prod-we-finance.
+
+fact_financial_transactions is handled differently, its extracted incr based on the Transaction_date_created field.
+*/
