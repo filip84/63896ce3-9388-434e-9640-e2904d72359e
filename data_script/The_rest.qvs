@@ -1,0 +1,46 @@
+TableList:
+load * inline [
+Tables, Where
+sap_cepc,
+sap_t001,
+sap_ska1,
+sap_skb1,
+sap_aufk,
+sap_tcurr,
+sap_zfvaf,
+sap_zivrep,
+sap_zmrpoaa,
+sap_ob08,
+workday_purchases,
+map_accounts_workday_to_hfm,
+map_accounts_wd_to_aaro,
+map_company_sap_wd_to_aaro,
+map_cost_center_for_AARO,
+map_accounts_sap_to_aaro,
+map_gl_sc_rc_classification,
+map_relatedparty_sap_wd_to_aaro,
+map_accounts_rp_sap_to_aaro,
+map_gl_coding,
+map_sap_purchase_order_to_vin,
+map_io_to_program,
+link_account_report
+];
+
+//sap_fbl3n,
+//workday_transaction_data, where NOT left(Company@4) IN ('US01'@'US41')
+
+///Mapping table to extract where statement and replace @ with comma
+mWhere: 
+mapping Load 
+Tables 					as input,
+Replace(Where,'@',',')	as output
+resident TableList
+where len(Where) > 0
+;
+let vWhere = ApplyMap('mWhere','$(a)','');
+
+FOR Each a in FieldValueList('Tables')
+
+	call Extract('$(a)', '$(vWhere)');
+
+next a;
