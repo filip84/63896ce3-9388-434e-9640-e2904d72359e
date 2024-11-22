@@ -21,7 +21,7 @@ SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:;-9:n;-1
 let vStartYear = 2020;
 
 
-///Table to keep track on extraction details.
+///Table to keep track on extraction details...
 ReloadList:
 Load * inline [
 Table, Start, End, Rows, Size, Path, Type
