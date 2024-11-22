@@ -1,0 +1,1 @@
+This folder contains JSON representations of Qlik sheets.
