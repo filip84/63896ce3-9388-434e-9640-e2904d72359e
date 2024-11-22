@@ -1,0 +1,142 @@
+{
+  "qInfo": {
+    "qId": "1418887a-9149-459a-99c6-1a93877a9614",
+    "qType": "sheet"
+  },
+  "qMeta": {
+    "title": "Log",
+    "description": "",
+    "createdDate": "2024-11-14T05:38:24.120Z",
+    "modifiedDate": "2024-11-21T15:39:57.279Z",
+    "published": false,
+    "publishTime": "1753-01-01T00:00:00.000Z",
+    "approved": false,
+    "owner": {
+      "id": "2f9b8e3e-8fca-4bc0-a9c2-515a447ede18",
+      "userId": "filip.tinglof@polestar.com",
+      "userDirectory": "AZURE",
+      "userDirectoryConnectorName": "",
+      "name": "filip.tinglof@polestar.com",
+      "privileges": null
+    },
+    "qSize": -1,
+    "sourceObject": "",
+    "draftObject": "",
+    "privileges": [
+      "read",
+      "update",
+      "delete",
+      "exportdata",
+      "publish",
+      "approve"
+    ]
+  },
+  "qSelectionInfo": {},
+  "rank": -1,
+  "thumbnail": {
+    "qStaticContentUrl": {}
+  },
+  "columns": 24,
+  "rows": 12,
+  "cells": [
+    {
+      "name": "pmrJkt",
+      "type": "table",
+      "col": 0,
+      "row": 0,
+      "colspan": 24,
+      "rowspan": 6,
+      "bounds": {
+        "y": 0,
+        "x": 0,
+        "width": 100,
+        "height": 50
+      }
+    },
+    {
+      "name": "aXpMmxD",
+      "type": "table",
+      "col": 0,
+      "row": 6,
+      "colspan": 12,
+      "rowspan": 6,
+      "bounds": {
+        "y": 50,
+        "x": 0,
+        "width": 50,
+        "height": 50
+      }
+    },
+    {
+      "name": "HpQJHG",
+      "type": "table",
+      "col": 12,
+      "row": 6,
+      "colspan": 12,
+      "rowspan": 6,
+      "bounds": {
+        "y": 50,
+        "x": 50,
+        "width": 50,
+        "height": 50
+      }
+    }
+  ],
+  "qChildList": {
+    "qItems": [
+      {
+        "qInfo": {
+          "qId": "pmrJkt",
+          "qType": "table"
+        },
+        "qMeta": {
+          "privileges": [
+            "read",
+            "update",
+            "delete",
+            "exportdata"
+          ]
+        },
+        "qData": {
+          "title": "ReloadList"
+        }
+      },
+      {
+        "qInfo": {
+          "qId": "aXpMmxD",
+          "qType": "table"
+        },
+        "qMeta": {
+          "privileges": [
+            "read",
+            "update",
+            "delete",
+            "exportdata"
+          ]
+        },
+        "qData": {
+          "title": "Changelog"
+        }
+      },
+      {
+        "qInfo": {
+          "qId": "HpQJHG",
+          "qType": "table"
+        },
+        "qMeta": {
+          "privileges": [
+            "read",
+            "update",
+            "delete",
+            "exportdata"
+          ]
+        },
+        "qData": {
+          "title": "Changelog"
+        }
+      }
+    ]
+  },
+  "gridResolution": "small",
+  "gridMode": "edit"
+}
