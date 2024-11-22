@@ -1,6 +1,6 @@
 {
   "qInfo": {
-    "qId": "pmrJkt",
+    "qId": "aXpMmxD",
     "qType": "table"
   },
   "qMeta": {
@@ -12,26 +12,25 @@
     ]
   },
   "qSelectionInfo": {},
-  "visualization": "table",
   "qHyperCube": {
     "qSize": {
-      "qcx": 8,
-      "qcy": 24
+      "qcx": 4,
+      "qcy": 3
     },
     "qDimensionInfo": [
       {
-        "qFallbackTitle": "Type",
+        "qFallbackTitle": "logId",
         "qApprMaxGlyphCount": 4,
-        "qCardinal": 2,
+        "qCardinal": 3,
         "qSortIndicator": "A",
         "qGroupFallbackTitles": [
-          "Type"
+          "logId"
         ],
         "qGroupPos": 0,
         "qStateCounts": {
           "qLocked": 0,
           "qSelected": 0,
-          "qOption": 2,
+          "qOption": 3,
           "qDeselected": 0,
           "qAlternative": 0,
           "qExcluded": 0,
@@ -51,19 +50,19 @@
         },
         "qIsAutoFormat": true,
         "qGroupFieldDefs": [
-          "Type"
+          "logId"
         ],
         "qMin": "NaN",
         "qMax": "NaN",
         "qAttrExprInfo": [],
         "qAttrDimInfo": [],
         "qCardinalities": {
-          "qCardinal": 2,
-          "qHypercubeCardinal": 2,
+          "qCardinal": 3,
+          "qHypercubeCardinal": 3,
           "qAllValuesCardinal": -1
         },
         "autoSort": true,
-        "cId": "qwTYx",
+        "cId": "SsmMv",
         "othersLabel": "Others",
         "textAlign": {
           "auto": true,
@@ -73,136 +72,27 @@
           "type": "text",
           "urlPosition": "dimension",
           "urlLabel": "",
-          "linkUrl": ""
+          "linkUrl": "",
+          "imageSetting": "label",
+          "imageLabel": "",
+          "imageUrl": "",
+          "imageSize": "fitHeight",
+          "imagePosition": "topCenter"
         }
       },
       {
-        "qFallbackTitle": "Table",
-        "qApprMaxGlyphCount": 56,
-        "qCardinal": 24,
+        "qFallbackTitle": "logDate",
+        "qApprMaxGlyphCount": 10,
+        "qCardinal": 3,
         "qSortIndicator": "A",
         "qGroupFallbackTitles": [
-          "Table"
+          "logDate"
         ],
         "qGroupPos": 0,
         "qStateCounts": {
           "qLocked": 0,
           "qSelected": 0,
-          "qOption": 24,
-          "qDeselected": 0,
-          "qAlternative": 0,
-          "qExcluded": 0,
-          "qSelectedExcluded": 0,
-          "qLockedExcluded": 0
-        },
-        "qTags": [
-          "$ascii",
-          "$text"
-        ],
-        "qDimensionType": "D",
-        "qGrouping": "N",
-        "qNumFormat": {
-          "qType": "U",
-          "qnDec": 0,
-          "qUseThou": 0
-        },
-        "qIsAutoFormat": true,
-        "qGroupFieldDefs": [
-          "Table"
-        ],
-        "qMin": "NaN",
-        "qMax": "NaN",
-        "qAttrExprInfo": [],
-        "qAttrDimInfo": [],
-        "qCardinalities": {
-          "qCardinal": 24,
-          "qHypercubeCardinal": 24,
-          "qAllValuesCardinal": -1
-        },
-        "autoSort": true,
-        "cId": "QXJmVxC",
-        "othersLabel": "Others",
-        "textAlign": {
-          "auto": true,
-          "align": "left"
-        },
-        "representation": {
-          "type": "text",
-          "urlPosition": "dimension",
-          "urlLabel": "",
-          "linkUrl": ""
-        }
-      },
-      {
-        "qFallbackTitle": "Path",
-        "qApprMaxGlyphCount": 62,
-        "qCardinal": 24,
-        "qSortIndicator": "A",
-        "qGroupFallbackTitles": [
-          "Path"
-        ],
-        "qGroupPos": 0,
-        "qStateCounts": {
-          "qLocked": 0,
-          "qSelected": 0,
-          "qOption": 24,
-          "qDeselected": 0,
-          "qAlternative": 0,
-          "qExcluded": 0,
-          "qSelectedExcluded": 0,
-          "qLockedExcluded": 0
-        },
-        "qTags": [
-          "$ascii",
-          "$text"
-        ],
-        "qDimensionType": "D",
-        "qGrouping": "N",
-        "qNumFormat": {
-          "qType": "U",
-          "qnDec": 0,
-          "qUseThou": 0
-        },
-        "qIsAutoFormat": true,
-        "qGroupFieldDefs": [
-          "Path"
-        ],
-        "qMin": "NaN",
-        "qMax": "NaN",
-        "qAttrExprInfo": [],
-        "qAttrDimInfo": [],
-        "qCardinalities": {
-          "qCardinal": 24,
-          "qHypercubeCardinal": 24,
-          "qAllValuesCardinal": -1
-        },
-        "autoSort": true,
-        "cId": "ktDhVu",
-        "othersLabel": "Others",
-        "textAlign": {
-          "auto": true,
-          "align": "left"
-        },
-        "representation": {
-          "type": "text",
-          "urlPosition": "dimension",
-          "urlLabel": "",
-          "linkUrl": ""
-        }
-      },
-      {
-        "qFallbackTitle": "Start",
-        "qApprMaxGlyphCount": 22,
-        "qCardinal": 22,
-        "qSortIndicator": "A",
-        "qGroupFallbackTitles": [
-          "Start"
-        ],
-        "qGroupPos": 0,
-        "qStateCounts": {
-          "qLocked": 0,
-          "qSelected": 0,
-          "qOption": 22,
+          "qOption": 3,
           "qDeselected": 0,
           "qAlternative": 0,
           "qExcluded": 0,
@@ -211,7 +101,9 @@
         },
         "qTags": [
           "$numeric",
-          "$timestamp"
+          "$integer",
+          "$timestamp",
+          "$date"
         ],
         "qDimensionType": "N",
         "qGrouping": "N",
@@ -222,20 +114,20 @@
         },
         "qIsAutoFormat": true,
         "qGroupFieldDefs": [
-          "Start"
+          "logDate"
         ],
-        "qMin": 45609.22956018519,
-        "qMax": 45609.236979166664,
+        "qMin": 45281,
+        "qMax": 45341,
         "qContinuousAxes": true,
         "qAttrExprInfo": [],
         "qAttrDimInfo": [],
         "qCardinalities": {
-          "qCardinal": 22,
-          "qHypercubeCardinal": 22,
+          "qCardinal": 3,
+          "qHypercubeCardinal": 3,
           "qAllValuesCardinal": -1
         },
         "autoSort": true,
-        "cId": "bBvgpR",
+        "cId": "vGkbUH",
         "othersLabel": "Others",
         "textAlign": {
           "auto": true,
@@ -245,22 +137,27 @@
           "type": "text",
           "urlPosition": "dimension",
           "urlLabel": "",
-          "linkUrl": ""
+          "linkUrl": "",
+          "imageSetting": "label",
+          "imageLabel": "",
+          "imageUrl": "",
+          "imageSize": "fitHeight",
+          "imagePosition": "topCenter"
         }
       },
       {
-        "qFallbackTitle": "End",
-        "qApprMaxGlyphCount": 22,
-        "qCardinal": 23,
+        "qFallbackTitle": "logUser",
+        "qApprMaxGlyphCount": 2,
+        "qCardinal": 1,
         "qSortIndicator": "A",
         "qGroupFallbackTitles": [
-          "End"
+          "logUser"
         ],
         "qGroupPos": 0,
         "qStateCounts": {
           "qLocked": 0,
           "qSelected": 0,
-          "qOption": 23,
+          "qOption": 1,
           "qDeselected": 0,
           "qAlternative": 0,
           "qExcluded": 0,
@@ -268,10 +165,10 @@
           "qLockedExcluded": 0
         },
         "qTags": [
-          "$numeric",
-          "$timestamp"
+          "$ascii",
+          "$text"
         ],
-        "qDimensionType": "N",
+        "qDimensionType": "D",
         "qGrouping": "N",
         "qNumFormat": {
           "qType": "U",
@@ -280,19 +177,19 @@
         },
         "qIsAutoFormat": true,
         "qGroupFieldDefs": [
-          "End"
+          "logUser"
         ],
-        "qMin": 45609.23506944445,
-        "qMax": 45609.236979166664,
+        "qMin": "NaN",
+        "qMax": "NaN",
         "qAttrExprInfo": [],
         "qAttrDimInfo": [],
         "qCardinalities": {
-          "qCardinal": 23,
-          "qHypercubeCardinal": 23,
+          "qCardinal": 1,
+          "qHypercubeCardinal": 1,
           "qAllValuesCardinal": -1
         },
         "autoSort": true,
-        "cId": "ZcFP",
+        "cId": "tdRjyK",
         "othersLabel": "Others",
         "textAlign": {
           "auto": true,
@@ -302,230 +199,85 @@
           "type": "text",
           "urlPosition": "dimension",
           "urlLabel": "",
-          "linkUrl": ""
+          "linkUrl": "",
+          "imageSetting": "label",
+          "imageLabel": "",
+          "imageUrl": "",
+          "imageSize": "fitHeight",
+          "imagePosition": "topCenter"
         }
-      }
-    ],
-    "qMeasureInfo": [
-      {
-        "qFallbackTitle": "Duration",
-        "qApprMaxGlyphCount": 7,
-        "qCardinal": 0,
-        "qSortIndicator": "D",
-        "qNumFormat": {
-          "qType": "IV",
-          "qnDec": 0,
-          "qUseThou": 0,
-          "qFmt": "h:mm:ss"
-        },
-        "qMin": 0,
-        "qMax": 0.0055092592592700385,
-        "qAttrExprInfo": [],
-        "qAttrDimInfo": [],
-        "qTrendLines": [],
-        "autoSort": true,
-        "numFormatFromTemplate": true,
-        "isCustomFormatted": false,
-        "cId": "PnGNmK"
       },
       {
-        "qFallbackTitle": "Rows",
-        "qApprMaxGlyphCount": 10,
-        "qCardinal": 0,
-        "qSortIndicator": "D",
-        "qNumFormat": {
-          "qType": "F",
-          "qnDec": 2,
-          "qUseThou": 0,
-          "qFmt": "#,##0",
-          "qDec": ".",
-          "qThou": ","
+        "qFallbackTitle": "logDescription",
+        "qApprMaxGlyphCount": 13,
+        "qCardinal": 3,
+        "qSortIndicator": "A",
+        "qGroupFallbackTitles": [
+          "logDescription"
+        ],
+        "qGroupPos": 0,
+        "qStateCounts": {
+          "qLocked": 0,
+          "qSelected": 0,
+          "qOption": 3,
+          "qDeselected": 0,
+          "qAlternative": 0,
+          "qExcluded": 0,
+          "qSelectedExcluded": 0,
+          "qLockedExcluded": 0
         },
-        "qMin": 20,
-        "qMax": 8074993,
+        "qTags": [
+          "$ascii",
+          "$text"
+        ],
+        "qDimensionType": "D",
+        "qGrouping": "N",
+        "qNumFormat": {
+          "qType": "U",
+          "qnDec": 0,
+          "qUseThou": 0
+        },
+        "qIsAutoFormat": true,
+        "qGroupFieldDefs": [
+          "logDescription"
+        ],
+        "qMin": "NaN",
+        "qMax": "NaN",
         "qAttrExprInfo": [],
         "qAttrDimInfo": [],
-        "qTrendLines": [],
+        "qCardinalities": {
+          "qCardinal": 3,
+          "qHypercubeCardinal": 3,
+          "qAllValuesCardinal": -1
+        },
         "autoSort": true,
-        "cId": "YTYKf",
-        "numFormatFromTemplate": true,
+        "cId": "GFWpG",
+        "othersLabel": "Others",
         "textAlign": {
           "auto": true,
           "align": "left"
         },
         "representation": {
           "type": "text",
-          "indicator": {
-            "showTextValues": true,
-            "applySegmentColors": false,
-            "position": "right"
-          },
-          "miniChart": {
-            "type": "sparkline",
-            "colors": {
-              "main": {
-                "index": 6
-              },
-              "max": {
-                "index": 0,
-                "color": "none"
-              },
-              "min": {
-                "index": 0,
-                "color": "none"
-              },
-              "first": {
-                "index": 0,
-                "color": "none"
-              },
-              "last": {
-                "index": 0,
-                "color": "none"
-              },
-              "positive": {
-                "index": 6
-              },
-              "negative": {
-                "index": 10,
-                "color": "#f93f17"
-              }
-            },
-            "showDots": true,
-            "yAxis": {
-              "scale": "local",
-              "position": "auto"
-            }
-          }
-        },
-        "conditionalColoring": {
-          "segments": {
-            "limits": [],
-            "paletteColors": [
-              {
-                "index": 6,
-                "icon": "dot"
-              }
-            ]
-          }
-        },
-        "isCustomFormatted": false
-      },
-      {
-        "qFallbackTitle": "Size (MB)",
-        "qApprMaxGlyphCount": 9,
-        "qCardinal": 0,
-        "qSortIndicator": "D",
-        "qNumFormat": {
-          "qType": "F",
-          "qnDec": 2,
-          "qUseThou": 0,
-          "qFmt": "#,##0",
-          "qDec": ".",
-          "qThou": ","
-        },
-        "qMin": 18.894000000000002,
-        "qMax": 966374.9990000001,
-        "qAttrExprInfo": [],
-        "qAttrDimInfo": [],
-        "qTrendLines": [],
-        "autoSort": true,
-        "cId": "GDKC",
-        "numFormatFromTemplate": true,
-        "textAlign": {
-          "auto": false,
-          "align": "right"
-        },
-        "representation": {
-          "type": "text",
-          "indicator": {
-            "showTextValues": true,
-            "applySegmentColors": false,
-            "position": "right"
-          },
-          "miniChart": {
-            "type": "sparkline",
-            "colors": {
-              "main": {
-                "index": 6
-              },
-              "max": {
-                "index": 0,
-                "color": "none"
-              },
-              "min": {
-                "index": 0,
-                "color": "none"
-              },
-              "first": {
-                "index": 0,
-                "color": "none"
-              },
-              "last": {
-                "index": 0,
-                "color": "none"
-              },
-              "positive": {
-                "index": 6
-              },
-              "negative": {
-                "index": 10,
-                "color": "#f93f17"
-              }
-            },
-            "showDots": true,
-            "yAxis": {
-              "scale": "local",
-              "position": "auto"
-            }
-          }
-        },
-        "conditionalColoring": {
-          "segments": {
-            "limits": [],
-            "paletteColors": [
-              {
-                "index": 6,
-                "icon": "dot"
-              }
-            ]
-          }
-        },
-        "isCustomFormatted": false
+          "urlPosition": "dimension",
+          "urlLabel": "",
+          "linkUrl": "",
+          "imageSetting": "label",
+          "imageLabel": "",
+          "imageUrl": "",
+          "imageSize": "fitHeight",
+          "imagePosition": "topCenter"
+        }
       }
     ],
+    "qMeasureInfo": [],
     "qEffectiveInterColumnSortOrder": [
-      3,
+      0,
       1,
-      4,
-      7,
-      6,
-      5,
       2,
-      0
+      3
     ],
-    "qGrandTotalRow": [
-      {
-        "qText": "0:09:54",
-        "qNum": 0.0068750000136788,
-        "qElemNumber": -1,
-        "qState": "X",
-        "qIsTotalCell": true
-      },
-      {
-        "qText": "12,139,505",
-        "qNum": 12139505,
-        "qElemNumber": -1,
-        "qState": "X",
-        "qIsTotalCell": true
-      },
-      {
-        "qText": "1,204,040",
-        "qNum": 1204039.818,
-        "qElemNumber": -1,
-        "qState": "X",
-        "qIsTotalCell": true
-      }
-    ],
+    "qGrandTotalRow": [],
     "qDataPages": [
       {
         "qMatrix": [],
@@ -547,43 +299,32 @@
       0,
       1,
       2,
-      3,
-      4,
-      5,
-      6,
-      7
+      3
     ],
     "columnOrder": [
       0,
       1,
       2,
-      3,
-      4,
-      5,
-      6,
-      7
+      3
     ],
     "columnWidths": [
-      -1,
-      -1,
-      -1,
-      -1,
       -1,
       -1,
       -1,
       -1
     ]
   },
+  "script": "",
   "search": {
     "sorting": "auto"
   },
   "showTitles": true,
-  "title": "ReloadList",
+  "title": "Changelog",
   "subtitle": "",
   "footnote": "",
   "disableNavMenu": false,
-  "showDetails": false,
-  "components": [],
+  "showDetails": true,
+  "showDetailsExpression": false,
   "totals": {
     "show": true,
     "position": "noTotals",
@@ -597,5 +338,7 @@
   "multiline": {
     "wrapTextInHeaders": true,
     "wrapTextInCells": true
-  }
+  },
+  "visualization": "table",
+  "appId": "0154fb98-d08a-4e0a-9a77-fcbbbc528bce"
 }
